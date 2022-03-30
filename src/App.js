@@ -1,9 +1,20 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
-import Homepage from "./pages/Homepage";
+import { Routes, Route } from "react-router-dom"
 
 import requests from "./requests";
 import axios from "./axios";
+
+import Homepage from "./pages/Homepage";
+import NetflixOriginals from "./pages/NetflixOriginals";
+import Trending from "./pages/Trending";
+import TopRated from "./pages/TopRated";
+import ActionMovies from "./pages/ActionMovies";
+import ComedyMovies from "./pages/ComedyMovies";
+import HorrorMovies from "./pages/HorrorMovies";
+import RomanceMovies from "./pages/RomanceMovies";
+import Documentaries from "./pages/Documentaries";
+
+import "./App.css";
 const fetchArray = [
   "fetchNetflixOriginals",
   "fetchTrending",
@@ -59,7 +70,7 @@ function App() {
               break;
           }
 
-          console.log(request.data.results);
+       
         } catch (error) {
           console.error(error);
         }
@@ -70,7 +81,19 @@ function App() {
 
   return (
     <div className="app">
-     <Homepage netflixOriginals={netflixOriginals} trending={trending} topRated={topRated} actionMovies={actionMovies} comedyMovies={comedyMovies} horrorMovies={horrorMovies} romanceMovies={romanceMovies} documentaries={documentaries}/>
+        <Routes>
+        <Route path="/" element={  <Homepage netflixOriginals={netflixOriginals} trending={trending} topRated={topRated} actionMovies={actionMovies} comedyMovies={comedyMovies} horrorMovies={horrorMovies} romanceMovies={romanceMovies} documentaries={documentaries}/> } />
+
+        <Route path="/NetflixOriginals" element={ <NetflixOriginals data={netflixOriginals}/> } />
+        <Route path="/trending" element={ <Trending data={trending}/> } />
+        <Route path="/topRated" element={ <TopRated data={topRated}/> } />
+        <Route path="/actionMovies" element={ <ActionMovies data={actionMovies}/> } />
+        <Route path="/comedyMovies" element={ <ComedyMovies data={comedyMovies}/> } />
+        <Route path="/horrorMovies" element={ <HorrorMovies data={horrorMovies}/> } />
+        <Route path="/romanceMovies" element={ <RomanceMovies data={romanceMovies}/> } />
+        <Route path="/documentaries" element={ <Documentaries data={documentaries}/> } />
+      </Routes>
+    
     </div>
   );
 }

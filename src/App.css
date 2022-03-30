@@ -12,5 +12,7 @@ html {
 
 .app {
   background-color: #111;
+  min-height: 100vh;
+  padding-bottom: 1rem;
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import Row from "../../shared/Row";
 import Banner from "../../shared/Banner";
 import Nav from "../../shared/Nav";
+import NetflixOriginals from "../NetflixOriginals";
 
 const Homepage = ({netflixOriginals,trending, topRated, actionMovies, comedyMovies, horrorMovies, romanceMovies,documentaries }) => {
   return (
@@ -10,16 +11,17 @@ const Homepage = ({netflixOriginals,trending, topRated, actionMovies, comedyMovi
       <Banner />
       <Row
         title="NETFLIX ORIGINAL"
+        routePath={"NetflixOriginals"}
         fetchedMovies={netflixOriginals}
         isLargeRow
       />
-      <Row title="TRENDING NOW" fetchedMovies={trending} />
-      <Row title="Top Rated" fetchedMovies={topRated} />
-      <Row title="Action Movies" fetchedMovies={actionMovies} />
-      <Row title="Comedy Movies" fetchedMovies={comedyMovies} />
-      <Row title="Horror Movies" fetchedMovies={horrorMovies} />
-      <Row title="Romance Movies" fetchedMovies={romanceMovies} />
-      <Row title="documentaries " fetchedMovies={documentaries} />
+      <Row title="TRENDING NOW" fetchedMovies={trending}  routePath={"trending"}  />
+      <Row title="Top Rated" fetchedMovies={topRated} routePath={"topRated"} />
+      <Row title="Action Movies" fetchedMovies={actionMovies} routePath={"actionMovies"} />
+      <Row title="Comedy Movies" fetchedMovies={comedyMovies} routePath={"comedyMovies"} />
+      <Row title="Horror Movies" fetchedMovies={horrorMovies} routePath={"horrorMovies"} />
+      <Row title="Romance Movies" fetchedMovies={romanceMovies} routePath={"romanceMovies"} />
+      <Row title="documentaries " fetchedMovies={documentaries} routePath={"documentaries"} />
     </>
   );
 };

@@ -1,12 +1,14 @@
 .row {
-  
+    position: relative;
     margin-bottom: 2.5rem;
 
     &:hover {
         .row__title {
-            span,svg {
+
+            span,
+            svg {
                 transform: translate(0, 0);
-               opacity: 1;
+                opacity: 1;
             }
         }
 
@@ -21,21 +23,32 @@
         cursor: pointer;
         color: #eee;
 
+        a {
+
+            &,
+            &:hover {
+                color: currentColor;
+                text-decoration: unset;
+            }
+
+        }
+
         h2 {
             font-size: 1.4rem;
             text-transform: uppercase;
             font-weight: 600;
             display: flex;
             align-items: center;
-    
+
         }
 
-        span,svg {
+        span,
+        svg {
             font-size: .8rem;
             opacity: 0;
-            transform: translate(-6rem, 0 );
-           
-           
+            transform: translate(-6rem, 0);
+
+
         }
 
         span {

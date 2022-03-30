@@ -19,11 +19,10 @@ function Banner() {
     }
     fetchData();
   }, []);
-  console.log(movie);
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
-     console.log('run after 4 seconds');
      setDescription(!description)
     }, 4000);
     return () => clearTimeout(timer);
