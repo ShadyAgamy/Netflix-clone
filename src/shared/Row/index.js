@@ -60,9 +60,7 @@ console.log({fetchedMovies})
                 onClick={() => handelClick(movie)}
                 key={movie.id}
                 className={`row__poster`}
-                src={`${posterBaseUrl}${
-                  isLargeRow ? movie.poster_path : movie.backdrop_path
-                }`}
+                src={`${posterBaseUrl}${movie.poster_path}`}
                 alt={movie.name}
               />
             </SwiperSlide>
