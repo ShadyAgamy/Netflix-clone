@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,12 +17,10 @@ const posterBaseUrl = "https://image.tmdb.org/t/p/original";
 SwiperCore.use([Navigation]);
 
 function Row({ title, fetchedMovies, isLargeRow, routePath }) {
-  const [movies, setMovies] = useState(fetchedMovies);
+  
+console.log({fetchedMovies})
   const [previewMovie, setPreviewMovie] = useState("");
-  console.log(routePath);
-  useEffect(() => {
-    setMovies(fetchedMovies);
-  }, [fetchedMovies]);
+
 
   const handelClick = (movie) => {
     setPreviewMovie(movie);
@@ -55,9 +53,9 @@ function Row({ title, fetchedMovies, isLargeRow, routePath }) {
           <FontAwesomeIcon icon={faChevronLeft} />
         </div>
 
-        {movies.map((movie) => {
+        {fetchedMovies?.map((movie) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={movie.id}>
               <img
                 onClick={() => handelClick(movie)}
                 key={movie.id}
@@ -77,4 +75,6 @@ function Row({ title, fetchedMovies, isLargeRow, routePath }) {
   );
 }
 
-export default Row;
+
+const MemoizedRow = React.memo(Row);
+export default MemoizedRow;

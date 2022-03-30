@@ -1,5 +1,5 @@
 import React from "react";
-import Row from "../../shared/Row";
+import MemoizedRow from "../../shared/Row";
 import Banner from "../../shared/Banner";
 import Nav from "../../shared/Nav";
 import NetflixOriginals from "../NetflixOriginals";
@@ -9,19 +9,19 @@ const Homepage = ({netflixOriginals,trending, topRated, actionMovies, comedyMovi
     <>
       <Nav />
       <Banner />
-      <Row
+      <MemoizedRow
         title="NETFLIX ORIGINAL"
         routePath={"NetflixOriginals"}
         fetchedMovies={netflixOriginals}
         isLargeRow
       />
-      <Row title="TRENDING NOW" fetchedMovies={trending}  routePath={"trending"}  />
-      <Row title="Top Rated" fetchedMovies={topRated} routePath={"topRated"} />
-      <Row title="Action Movies" fetchedMovies={actionMovies} routePath={"actionMovies"} />
-      <Row title="Comedy Movies" fetchedMovies={comedyMovies} routePath={"comedyMovies"} />
-      <Row title="Horror Movies" fetchedMovies={horrorMovies} routePath={"horrorMovies"} />
-      <Row title="Romance Movies" fetchedMovies={romanceMovies} routePath={"romanceMovies"} />
-      <Row title="documentaries " fetchedMovies={documentaries} routePath={"documentaries"} />
+      <MemoizedRow title="TRENDING NOW" fetchedMovies={trending}  routePath={"trending"}  />
+      <MemoizedRow title="Top Rated" fetchedMovies={topRated} routePath={"topRated"} />
+      <MemoizedRow title="Action Movies" fetchedMovies={actionMovies} routePath={"actionMovies"} />
+      <MemoizedRow title="Comedy Movies" fetchedMovies={comedyMovies} routePath={"comedyMovies"} />
+      <MemoizedRow title="Horror Movies" fetchedMovies={horrorMovies} routePath={"horrorMovies"} />
+      <MemoizedRow title="Romance Movies" fetchedMovies={romanceMovies} routePath={"romanceMovies"} />
+      <MemoizedRow title="documentaries " fetchedMovies={documentaries} routePath={"documentaries"} />
     </>
   );
 };

@@ -79,12 +79,9 @@
         object-fit: cover;
         width: 100%;
         height: 100%;
-        transition: transform 400ms;
+        
         margin-right: 10px;
-
-        &:hover {
-            transform: scale(1.08);
-        }
+        
 
         &--large {
             max-height: 250px;
@@ -138,8 +135,17 @@
 
 
 
-
+.swiper  {
+    overflow: visible;
+}
 .swiper-slide {
     width: 230px !important;
     height: 130px;
+    transition: transform 400ms;
+    cursor: pointer;
+        &:hover {
+            transform: scale(2);
+            z-index: 9999;
+            position: relative;
+        }
 }
